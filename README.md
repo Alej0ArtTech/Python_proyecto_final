@@ -2,6 +2,53 @@
 Trabajo de e-comerce para curso python. 
 
 # E-Commerce con Django
+
+## FECHA ESTIMADA DE TERMINO: 14 DE JUNIO
+
+Trabajaré con la finalidad de completar este trabajo final en esta fecha
+
+## Requerimiento de entrega
+
+🕵️ Cumplimiento de consigna:
+
+💫 Entrega hecha por GitHub
+
+💫 Readme con la explicación del proyecto
+
+💫 Video de no más de 10 minutos
+
+🕵️ Estructura interna:
+
+💫 una o más aplicaciones creadas
+
+💫 dos modelos con campos de texto, número, fecha
+
+💫 vista de listado de registros de un modelo
+
+💫 vista del detalle de un registro de un modelo
+
+💫 vista para crear un registro de un modelo
+
+💫 vista para eliminar un registro de un modelo
+
+💫 about/ que hable sobre el creador del proyecto
+
+🕵️ Lógica de usuarios:
+
+💫 login de usuario
+
+💫 registro de usuario
+
+💫 administrador: puede realizar CRUD sobre los modelos
+
+💫 administrador: subir una imagen de perfil para un usuario
+
+🕵️ Flujo del proyecto
+
+💫 Ingresar a la web app desde la ruta base ‘/’ y direccionar a “home”
+
+💫 navegar entre las diferentes URL sin tener que usar la “barra del navegador”
+
 ## Introducción
 Este proyecto es el trabajo final del curso de Python, donde se desarrolla una aplicación de e-commerce utilizando el framework Django.
 
