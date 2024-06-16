@@ -3,11 +3,11 @@ Trabajo de e-comerce para curso python.
 
 # E-Commerce con Django
 
-## FECHA ESTIMADA DE TERMINO: 17 DE JUNIO
+## Fecha estimada de termino: 17 de junio
 
 Trabajaré con la finalidad de completar este trabajo final en esta fecha. Sigo elaborando el registro, me comprometo a completar los requisitos antes del 17 de junio.
 
-## E-COMMCERCE MULTIFUNCIONAL
+## E-Commerce Multifuncional
 
 Barro.on es una tienda de venta de piezas ceramicas. Ofreciendo al consumidor piezas unicas de artesania. Esta pagina fue elaborada en un equipo colaborativo como parte de un proyecto de frontend, el proyecto presente consiste en hacer la lógica del negocio con Python y el framework Django.
 
@@ -22,13 +22,12 @@ Para modularizar las partes del backed, modularice las siguientes apliaciones:
 5.- Productos
 6.- Usuarios
 
-**Apliaciones que falta definir
 
 ![image](https://github.com/Alej0ArtTech/Python_proyecto_final/assets/139415517/ece80e93-51bd-47ef-8bc5-934ff836557c)
 
 A partir del cual realice los modelos en django, modularizando las tablas SQL en su respectiva apliación:
 
-Con esto busque que cada apliación tuviera las tablas SQL más afines a su lógica.
+Con esto busque que cada apliación tuviera las tablas SQL más afines a su lógica. En la siguiente imagen se puede ser el model de pedidos que incluye tres tablas principales. Estas tablas estan definidas de su respectiva aplicación (pedidos).
 ![image](https://github.com/Alej0ArtTech/Python_proyecto_final/assets/139415517/02d001ed-1a26-4439-8c50-ddb0a80f6346)
 
 ## Front end
