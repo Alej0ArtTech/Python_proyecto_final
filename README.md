@@ -3,9 +3,43 @@ Trabajo de e-comerce para curso python.
 
 # E-Commerce con Django
 
-## FECHA ESTIMADA DE TERMINO: 14 DE JUNIO
+## FECHA ESTIMADA DE TERMINO: 17 DE JUNIO
 
-Trabajaré con la finalidad de completar este trabajo final en esta fecha
+Trabajaré con la finalidad de completar este trabajo final en esta fecha. Sigo elaborando el registro, me comprometo a completar los requisitos antes del 17 de junio.
+
+## E-COMMCERCE MULTIFUNCIONAL
+
+Barro.on es una tienda de venta de piezas ceramicas. Ofreciendo al consumidor piezas unicas de artesania. Esta pagina fue elaborada en un equipo colaborativo como parte de un proyecto de frontend, el proyecto presente consiste en hacer la lógica del negocio con Python y el framework Django.
+
+Partí del sigueinte modelo SQL:
+![Image20240522153446](https://github.com/Alej0ArtTech/Python_proyecto_final/assets/139415517/e1f70764-4450-444e-b253-9114a2e64966)
+
+Para modularizar las partes del backed, modularice las siguientes apliaciones: 
+1.- Carrito de compras
+2.- Categorias **
+3.- Core (Logica de interconecciones entre diversas aplicaciones)
+4.- Pedidos (lógica de ventas)
+5.- Productos
+6.- Usuarios
+
+**Apliaciones que falta definir
+
+![image](https://github.com/Alej0ArtTech/Python_proyecto_final/assets/139415517/ece80e93-51bd-47ef-8bc5-934ff836557c)
+
+A partir del cual realice los modelos en django, modularizando las tablas SQL en su respectiva apliación:
+
+Con esto busque que cada apliación tuviera las tablas SQL más afines a su lógica.
+![image](https://github.com/Alej0ArtTech/Python_proyecto_final/assets/139415517/02d001ed-1a26-4439-8c50-ddb0a80f6346)
+
+## Front end
+
+
+Definí un navbar y un footer modularizando sus partes en componentes.
+![image](https://github.com/Alej0ArtTech/Python_proyecto_final/assets/139415517/f7a3ee6b-c06f-419a-a70d-caf0b6540591)
+
+![image](https://github.com/Alej0ArtTech/Python_proyecto_final/assets/139415517/1390a127-8fbf-404f-b358-fc071b895522)
+
+Estamos en proceso de terminar un crud y realizar la logica de registro.
 
 ## Requerimiento de entrega
 
