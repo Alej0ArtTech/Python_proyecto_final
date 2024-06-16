@@ -37,6 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    ### Marcador
+    'django.contrib.sites',  # Asegúrate de incluir 'sites' también
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    ###
     'core',
     'pedidos',
     'productos',
@@ -53,6 +59,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'allauth.account.middleware.AccountMiddleware',  # arranca por favor
+
 ]
 
 ROOT_URLCONF = 'config.urls'

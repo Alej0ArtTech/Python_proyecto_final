@@ -31,3 +31,5 @@ class MetodoPagoUsuario(models.Model):
     titular = models.CharField(max_length=50)
     dir_facturacion = models.TextField()
     id_cliente = models.ForeignKey(Usuario, on_delete=models.CASCADE)
+
+    

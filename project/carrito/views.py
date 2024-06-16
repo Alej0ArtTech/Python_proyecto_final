@@ -1,5 +1,8 @@
-from django.shortcuts import render
+
+from django.shortcuts import render, redirect
+from django.http import HttpResponse  # Si necesitas HttpResponse específicamente
 from .models import Carrito, CarritoProducto
+from productos.models import Producto
 
 def carrito_view(request):
     # Lógica para mostrar el carrito de compras del usuario
