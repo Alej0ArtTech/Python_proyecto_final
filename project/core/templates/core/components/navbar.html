@@ -16,8 +16,9 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
             <ul class="navbar-nav me-auto mb-lg-0">
                 <li class="nav-item">
-                    <a href="{% url 'core:index' %}" class="nav-link active" id='navbrcolorletras' aria-current="page">Inicio </a> 
-                        
+                    <a href="{% url 'core:index' %}" class="nav-link active" id='navbrcolorletras'
+                        aria-current="page">Inicio </a>
+
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" id='navbrcolorletras' aria-current="page"
@@ -38,15 +39,27 @@
                     placeholder="Buscar en Barro.On..." aria-label="Buscar">
                 <button class="btn btn-outline-success" id="botonbuscarcolor" type="submit">Buscar</button>
             </form>
-            <!-- Icono de perfil -->
-            <a class="navbar-brand" href="{% static 'src/pages/iniciar_sesion.html' %}" style="color: white;">
-                <img src="{% static 'assets/iconoperfilnavbar.webp' %}" alt="Iniciar sesión / Registro" width="70" height="70">
+
+            {% if user.is_authenticated %}
+            <!-- Enlace de cerrar sesión -->
+            <form class="navbar-brand" action="{% url 'core:logout' %}" method="post" style="color: white;">
+                <img src="{% static 'assets/iconoperfilnavbar.webp' %}" alt="Cerrar sesión" width="70" height="70">
+                {% csrf_token %}
+                <button type="submit"> Cerrar Sesión </button>
+                
+            </form>
+            {% else %}
+            <!-- Enlace de iniciar sesión -->
+            <a class="navbar-brand" href="{% url 'core:login' %}" style="color: white;">
+                <img src="{% static 'assets/iconoperfilnavbar.webp' %}" alt="Iniciar sesión / Registro" width="70"
+                    height="70">
                 Iniciar Sesión
             </a>
-            
+            {% endif %}
+
             <!-- Icono de carrito -->
             <a class="navbar-brand" id="carritoicon" href="{% static 'src/pages/carrito.html' %}">
                 <img src="{% static 'assets/iconocarritonavbar.webp' %}" alt="Carrito" width="65" height="60">
             </a>
-    </div>
+        </div>
 </nav>
