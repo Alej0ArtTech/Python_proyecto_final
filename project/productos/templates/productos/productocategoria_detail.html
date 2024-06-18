@@ -3,26 +3,51 @@
 {% block title %}Detalle del Producto{% endblock %}
 
 {% block content %}
+
+{% load static %}
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/detail.css' %}">
+{% endblock %}
 <div class="container">
     <h1>{{ object.nombre }}</h1>
-    <p>{{ object.descripcion }}</p>
-    <p>Precio: {{ object.precio }}</p>
-    <p>Cantidad: {{ object.cantidad }}</p>
-    <p>Descuento: {{ object.descuento }}</p>
-    <p>Categoría: {{ object.id_categoria.nombre }}</p>
+    <p class="lead">{{ object.descripcion }}</p>
     
-    <h3>Imágenes del Producto</h3>
     <div class="row">
-        {% for imagen in object.productoimagen_set.all %}
-        <div class="col-md-4">
-            <img src="{{ imagen.imagen.url }}" class="img-thumbnail img-detail" alt="Imagen de {{ object.nombre }}" data-toggle="modal" data-target="#imageModal" data-src="{{ imagen.imagen.url }}">
+        <div class="col-md-6">
+            <div class="card mb-4 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Detalles del Producto</h5>
+                    <p class="card-text"><strong>Precio:</strong> {{ object.precio }}</p>
+                    <p class="card-text"><strong>Cantidad:</strong> {{ object.cantidad }}</p>
+                    <p class="card-text"><strong>Descuento:</strong> {{ object.descuento }}</p>
+                    <p class="card-text"><strong>Categoría:</strong> {{ object.id_categoria.nombre }}</p>
+                </div>
+            </div>
         </div>
-        {% endfor %}
+        <div class="col-md-6">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    {% for imagen in object.productoimagen_set.all %}
+                    <div class="carousel-item {% if forloop.first %} active {% endif %}">
+                        <img src="{{ imagen.imagen.url }}" class="d-block w-100 img-thumbnail" alt="Imagen de {{ object.nombre }}">
+                    </div>
+                    {% endfor %}
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
     </div>
 
     <!-- Modal para mostrar imágenes grandes -->
     <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="imageModalLabel">Imagen del Producto</h5>
@@ -31,7 +56,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <img id="modalImage" src="" class="img-fluid" alt="Imagen del Producto">
+                    <img id="modalImage" src="" class="img-fluid rounded" alt="Imagen del Producto">
                 </div>
             </div>
         </div>

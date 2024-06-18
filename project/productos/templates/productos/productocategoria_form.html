@@ -1,13 +1,48 @@
 {% extends "core/base.html" %}
 {% block title %}Formulario de Producto{% endblock %}
 
+{% load static %}
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/form.css' %}">
+{% endblock %}
+
+
 {% block content %}
 <div class="container">
     <h1>{{ view.object.pk|yesno:"Editar Producto,Nuevo Producto" }}</h1>
-    <form method="post" enctype="multipart/form-data">
+    <form method="post" enctype="multipart/form-data" class="my-4">
         {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="btn btn-success">Guardar</button>
+        <div class="form-group">
+            {{ form.nombre.label_tag }}
+            {{ form.nombre }}
+        </div>
+        <div class="form-group">
+            {{ form.descripcion.label_tag }}
+            {{ form.descripcion }}
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                {{ form.precio.label_tag }}
+                {{ form.precio }}
+            </div>
+            <div class="form-group col-md-6">
+                {{ form.cantidad.label_tag }}
+                {{ form.cantidad }}
+            </div>
+        </div>
+        <div class="form-group">
+            {{ form.descuento.label_tag }}
+            {{ form.descuento }}
+        </div>
+        <div class="form-group">
+            {{ form.id_categoria.label_tag }}
+            {{ form.id_categoria }}
+        </div>
+        <div class="form-group">
+            {{ form.imagenes.label_tag }}
+            {{ form.imagenes }}
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg btn-block">Guardar Producto</button>
     </form>
 </div>
 {% endblock %}

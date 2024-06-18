@@ -1,0 +1,83 @@
+
+
+/* Contenedor del formulario */
+#login-form-container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 70px 80px;
+    max-width: 400px;
+    width: 100%;
+    display: grid;
+    align-items: center;
+    gap: 20px;
+    border: 2px solid #d9a679; /* Color marrón claro */
+}
+
+/* Estilo del formulario */
+#login-form-container form {
+    display: grid;
+    gap: 15px;
+}
+
+/* Tabla del formulario */
+#login-form-container form table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Celdas del formulario */
+#login-form-container form table td {
+    padding: 10px;
+    vertical-align: middle;
+}
+
+/* Botones */
+#login-form-container form .btn {
+    background-color: #d9a679; /* Color marrón claro */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+}
+
+#login-form-container form .btn:hover {
+    background-color: #bf8f63; /* Color marrón más oscuro */
+}
+
+#login-form-container form .btn:active {
+    background-color: #a6784d; /* Color marrón aún más oscuro */
+}
+
+/* Enlace de cancelar */
+#login-form-container form a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #d9a679;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+#login-form-container form a:hover {
+    text-decoration: underline;
+}
+
+/* Ajustes de los inputs */
+#login-form-container form input[type="text"],
+#login-form-container form input[type="password"],
+#login-form-container form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Estilo del token CSRF */
+#login-form-container form input[name="csrfmiddlewaretoken"] {
+    display: none;
+}

@@ -1,10 +1,16 @@
 {% extends "core/base.html" %}
 {% block title %}Lista de Productos{% endblock %}
 
+{% load static %}
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/list.css' %}">
+{% endblock %}
+
+
 {% block content %}
-<div class="container">
-    <h1>Lista de Productos</h1>
-    <table class="table table-striped">
+<div class="product-container">
+    <h1 class="product-title">Lista de Productos</h1>
+    <table class="product-table table-striped">
         <thead>
             <tr>
                 <th>Nombre</th>
@@ -18,14 +24,14 @@
                 <td>{{ producto.nombre }}</td>
                 <td>{{ producto.precio }}</td>
                 <td>
-                    <a href="{% url 'productos:productocategoria_detail' producto.pk %}">Detalle</a> |
-                    <a href="{% url 'productos:productocategoria_update' producto.pk %}">Cambiar</a> |
-                    <a href="{% url 'productos:productocategoria_delete' producto.pk %}">Borrar</a>
+                    <a href="{% url 'productos:productocategoria_detail' producto.pk %}" class="product-btn">Detalle</a>
+                    <a href="{% url 'productos:productocategoria_update' producto.pk %}" class="product-btn">Cambiar</a>
+                    <a href="{% url 'productos:productocategoria_delete' producto.pk %}" class="product-btn">Borrar</a>
                 </td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
-    <a href="{% url 'productos:productocategoria_create' %}" class="btn btn-primary">Agregar Producto</a>
+    <a href="{% url 'productos:productocategoria_create' %}" class="product-btn btn-primary">Agregar Producto</a>
 </div>
 {% endblock %}

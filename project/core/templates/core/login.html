@@ -1,20 +1,27 @@
+
 {% extends 'core/base.html' %}
+
 
 {% block title %}
     Login
 {% endblock %}
+{% load static %}
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/login.css' %}">
+{% endblock %}
 
 {% block content %}
+<div id="login-form-container">
     <form method="post">
         {% csrf_token %}
         <table>
             {{ form.as_table }}
         </table>
-            <input type="hidden" name="next" value="{% url 'core:index' %}">
-            
-            <Button type="submit" class="btn btn-primary" value="{% url 'core:index' %}"> iniciar sesion</Button>
-            <a href="{% url 'core:index' %}"> Cancelar</a>
+        <input type="hidden" name="next" value="{% url 'core:index' %}">
+        
+        <button type="submit" class="btn" value="{% url 'core:index' %}">Iniciar sesión</button>
+        <a href="{% url 'core:index' %}">Cancelar</a>
     </form>
-
-    <!-- Aquí va el contenido específico de la página de inicio -->
+</div>
 {% endblock %}
+    <!-- Aquí va el contenido específico de la página de inicio -->
