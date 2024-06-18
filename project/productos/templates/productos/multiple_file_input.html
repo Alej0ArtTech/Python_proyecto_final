@@ -1,0 +1,23 @@
+
+{% load static %}
+
+<div class="input-group">
+    <div class="custom-file">
+        <input type="{{ widget.input_type }}" name="{{ widget.name }}"{% include "django/forms/widgets/attrs.html" %} />
+        <label class="custom-file-label" for="{{ widget.id_for_label }}">{{ widget.initial_text }}</label>
+    </div>
+    {% if not widget.is_required %}
+        <div class="input-group-append">
+            <button type="button" class="btn btn-outline-secondary input-group-text" onclick="clearFileInput('{{ widget.id_for_label }}')">{{ widget.clear_checkbox_label }}</button>
+        </div>
+    {% endif %}
+</div>
+
+<script>
+    function clearFileInput(idForLabel) {
+        var label = document.querySelector('label[for="' + idForLabel + '"]');
+        var input = label.nextElementSibling;
+        input.value = null;
+        label.innerHTML = '{{ widget.initial_text }}';
+    }
+</script>

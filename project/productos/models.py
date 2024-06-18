@@ -21,7 +21,7 @@ class Producto(models.Model):
 class ProductoImagen(models.Model):
     id_imagen = models.AutoField(primary_key=True)
     id_producto = models.ForeignKey(Producto, on_delete=models.CASCADE)
-    imagen_url = models.CharField(max_length=2083)
+    imagen = models.ImageField(upload_to='img_producto/', default='img_producto/image_default.jpeg')
 
     def __str__(self):
         return f"Imagen #{self.id_imagen} - Producto #{self.id_producto}"

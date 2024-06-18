@@ -1,0 +1,31 @@
+{% extends "core/base.html" %}
+{% block title %}Lista de Productos{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Lista de Productos</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for producto in object_list %}
+            <tr>
+                <td>{{ producto.nombre }}</td>
+                <td>{{ producto.precio }}</td>
+                <td>
+                    <a href="{% url 'producto:productocategoria_detail' producto.pk %}">Detalle</a> |
+                    <a href="{% url 'producto:productocategoria_update' producto.pk %}">Cambiar</a> |
+                    <a href="{% url 'producto:productocategoria_delete' producto.pk %}">Borrar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'producto:productocategoria_create' %}" class="btn btn-primary">Agregar Producto</a>
+</div>
+{% endblock %}
