@@ -48,7 +48,7 @@ Estamos en proceso de terminar un crud y realizar la logica de registro.
 
 💫 Readme con la explicación del proyecto Lista! (continuar mejorando)
 
-💫 Video de no más de 10 minutos (PENDIENTE!)
+💫 Video de no más de 10 minutos (PENDIENTE!) 
 
 🕵️ Estructura interna:
 

@@ -17,6 +17,7 @@ urlpatterns = [
     path('logout/', LogoutView.as_view(template_name="core/logged_out.html"), name='logout'),
     path('logged_out/', views.logged_out, name='logged_out'),
     path('productos/', include('productos.urls')),
+    path('nosotros/', views.nosotros, name='nosotros'),
 
 
 ]

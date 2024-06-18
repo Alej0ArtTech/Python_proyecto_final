@@ -11,3 +11,7 @@ class CustomLoginView(LoginView):
 
 def logged_out(request):
     return render(request, 'core/logged_out.html')
+
+
+def nosotros(request):
+    return render(request, 'core/nosotros.html')

@@ -1,21 +1,49 @@
 {% extends "core/base.html" %}
-{% block title %}Detalle de Producto{% endblock %}
+
+{% block title %}Detalle del Producto{% endblock %}
 
 {% block content %}
 <div class="container">
-    <h1>Detalle de {{ object.nombre }}</h1>
-    <p><strong>Descripción:</strong> {{ object.descripcion }}</p>
-    <p><strong>Precio:</strong> {{ object.precio }}</p>
-    <p><strong>Cantidad:</strong> {{ object.cantidad }}</p>
-    <p><strong>Descuento:</strong> {{ object.descuento }}</p>
-    <p><strong>Categoría:</strong> {{ object.id_categoria }}</p>
-    <div>
-        <h3>Imágenes del Producto</h3>
+    <h1>{{ object.nombre }}</h1>
+    <p>{{ object.descripcion }}</p>
+    <p>Precio: {{ object.precio }}</p>
+    <p>Cantidad: {{ object.cantidad }}</p>
+    <p>Descuento: {{ object.descuento }}</p>
+    <p>Categoría: {{ object.id_categoria.nombre }}</p>
+    
+    <h3>Imágenes del Producto</h3>
+    <div class="row">
         {% for imagen in object.productoimagen_set.all %}
-        <img src="{{ imagen.imagen.url }}" alt="{{ object.nombre }}" style="width: 150px; height: 150px;">
+        <div class="col-md-4">
+            <img src="{{ imagen.imagen.url }}" class="img-thumbnail img-detail" alt="Imagen de {{ object.nombre }}" data-toggle="modal" data-target="#imageModal" data-src="{{ imagen.imagen.url }}">
+        </div>
         {% endfor %}
     </div>
-    <a href="{% url 'productos:productocategoria_update' object.pk %}" class="btn btn-warning">Editar</a>
-    <a href="{% url 'productos:productocategoria_delete' object.pk %}" class="btn btn-danger">Borrar</a>
+
+    <!-- Modal para mostrar imágenes grandes -->
+    <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="imageModalLabel">Imagen del Producto</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img id="modalImage" src="" class="img-fluid" alt="Imagen del Producto">
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
+<script>
+    $('#imageModal').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget);
+        var src = button.data('src');
+        var modal = $(this);
+        modal.find('.modal-body #modalImage').attr('src', src);
+    });
+</script>
 {% endblock %}

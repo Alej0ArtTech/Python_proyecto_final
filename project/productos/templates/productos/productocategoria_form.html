@@ -7,8 +7,6 @@
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
-        <label for="imagenes">Imágenes del Producto:</label>
-        {{ form.imagenes }}
         <button type="submit" class="btn btn-success">Guardar</button>
     </form>
 </div>

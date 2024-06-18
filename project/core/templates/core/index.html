@@ -1,15 +1,218 @@
 {% extends 'core/base.html' %}
-
+{% load static %}
 {% block title %}
     Página de inicio - Mi Sitio
 {% endblock %}
 
 {% block content %}
-    <h1>Página de inicio
 
-        <br><br><br><br>
 
-        hola mundo!
-    </h1>
+<main>
+    <!-- %%% Sección barro.on y carrusel %%% -->
+    <div class="container ">
+      <div class="row">
+        <div class="col-lg-7">
+          <!-- Card sobre barro on -->
+          <section class="py-3 container">
+            <div class="row py-lg-3">
+              <div class="col-lg-8 col-md-8 mx-auto py-5">
+                <h2 class="title--font2">BARRO.ON</h2>
+                <h3 class="title--font3">Somos un proyecto de arte decorativo en barro. Nos especializamos en
+                  la creación de piezas únicas y joyería de barro.</h3>
+                <p>
+                  <a href="./src/pages/tienda.html">
+                    <button class="button--change title--font5">Visita la tienda</button></a>
+                </p>
+              </div>
+            </div>
+          </section>
+        </div> <!-- columna grid barro On -->
+        
+        <div class="col-lg-4">
+          <!-- Carrusel --> <!-- TODOl CENTRAR CARDS DENTRO DE CARRUSEL -->
+          <div id="carousel-inicio" class="carousel slide my-5" data-bs-ride="carousel">
+
+            <div class="carousel-inner">
+              <!-- Primer item del carrusel (active) -->
+              <div class="carousel-item active">
+                <div class="card border border-2 border-black rounded-4" style="width: 250px;height:330px;">
+                  <div class="card-body">
+                    <img src="{% static 'assets/001.jpg' %}" alt="producto"
+                      style="width: 215px;height:210px;" class="border border-1 rounded-4 mb-3">
+                    <h5 class="title--font5 text-center">Joyería</h5>
+                  </div>
+                </div>
+              </div> <!-- Carousel item -->
+            
+              <!-- Items secundarios carrusel-->
+              <div class="carousel-item"> <!-- Item 2 -->
+                <div class="card border border-2 border-black rounded-4" style="width: 250px;height:330px;">
+                  <div class="card-body">
+                    <img src="{% static 'assets/002.jpeg' %}" alt="producto"
+                      style="width: 215px;height:210px;" class="border border-1 rounded-4 mb-3">
+                    <h5 class="title--font5 text-center">Utilitario</h5>
+                  </div>
+                </div>
+              </div> <!-- Carousel item -->
+
+              <div class="carousel-item "> <!-- Item 3 -->
+                <div class="card border border-2 border-black rounded-4" style="width: 250px;height:330px;">
+                  <div class="card-body">
+                    <img src="{% static 'assets/003.jpg' %}" alt="producto"
+                      style="width: 215px;height:210px;" class="border border-1 rounded-4 mb-3">
+                    <h5 class="title--font5 text-center">Arte Objetos</h5>
+                  </div>
+                </div>
+              </div> <!-- Carousel item -->
+
+
+
+              <!-- Botones para avanzar/retroceder carrusel-->
+              <button class="carousel-control-prev" type="button" data-bs-target="#carousel-inicio"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button> <!-- Botón previous -->
+
+              <button class="carousel-control-next" type="button" data-bs-target="#carousel-inicio"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button> <!-- Botón next -->
+
+            </div> <!-- Carousel inner -->
+          </div> <!-- carousel-inicio -->
+        </div> <!-- columna carrusel -->
+
+      </div> <!--row -->
+    </div> <!-- container barro on / carousel -->
+
+
+    <!-- %%% Sección de últimos productos %%% -->
+    <div class="container-fluid container-new-product py-4 px-auto">
+      <h2 class="title--font2 text-center mb-4">!! Productos Destacados !!</h2>
+
+      <div id="carousel-newProd" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner" id="productos"> <!-- TODO: VERIFICAR QUE JS GENERA CARDS -->
+          <!-- Aquí se insertarán las cards desde index.js -->
+        </div> <!-- Carousel inner -->
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carousel-newProd" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button> <!-- Botón anterior -->
+
+        <button class="carousel-control-next" type="button" data-bs-target="#carousel-newProd" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Siguiente</span>
+        </button> <!-- Botón siguiente -->
+      </div> <!-- myCarousel-->
+    </div> <!-- Container últimos productos -->
+
+
+    <!-- %%% Sección compromiso barro %%% -->
+    <div class="container-fluid footer-style py-5 px-1 text-center">
+      <h2 class="title--font2">Arte sostenible para un hogar ecológico</h2>
+    </div> <!-- Container fluid -->
+
+
+    <!-- %%% Sección de categorías %%%  -->
+    <div class="container-fluid py-3">
+      <h2 class="title--font2 text-center">Categorías</h2>
+      <!-- Primera fila de botones categorías-->
+      <div class="row text-center g-4">
+        <div class="col-lg-4 d-flex align-items-stretch"> <!-- Botón categoría Joyeria -->
+          <section class="py-3 text-center container d-flex flex-column justify-content-between">
+            <div class="row py-lg-3">
+              <div class="col-lg-8 col-md-8 mx-auto py-4">
+                <p>
+                  <img src="{% static 'assets/categoria_Joyeria.png' %}" alt="Categoria Joyeria"
+                    class="border border-1 rounded-4 mb-2 img-categorias">
+                </p>
+                <p>
+                  <a href="./src/pages/tienda.html">
+                    <button class="button--change title--font5">Joyería</button></a>
+                </p>
+              </div>
+            </div>
+          </section>
+        </div> <!-- Botón categoría Joyeria -->
+
+        <div class="col-lg-4 d-flex align-items-stretch"> <!-- Botón categoría Arte-Objeto -->
+          <section class="py-3 text-center container d-flex flex-column justify-content-between">
+            <div class="row py-lg-3">
+              <div class="col-lg-8 col-md-8 mx-auto py-4">
+                <p>
+                  <img src="{% static 'assets/categoria_Arte-objeto.png' %}" alt="Categoria Arte Objeto"
+                    class="border border-1 rounded-4 mb-2 img-categorias">
+                </p>
+                <p>
+                  <a href="./src/pages/tienda.html">
+                    <button class="button--change title--font5">Arte-Objeto</button></a>
+                </p>
+              </div>
+            </div>
+          </section>
+        </div> <!-- Botón categoría Arte-Objeto -->
+
+        <div class="col-lg-4 d-flex align-items-stretch"> <!-- Botón categoría Floreros -->
+          <section class="py-3 text-center container d-flex flex-column justify-content-between">
+            <div class="row py-lg-3">
+              <div class="col-lg-8 col-md-8 mx-auto py-4">
+                <p>
+                  <img src="{% static 'assets/categoria_Floreros.png' %}" alt="Categoria Floreros"
+                    class="border border-1 rounded-4 mb-2 img-categorias">
+                </p>
+                <p>
+                  <a href="./src/pages/tienda.html">
+                    <button class="button--change title--font5">Floreros</button></a>
+                </p>
+              </div>
+            </div>
+          </section>
+        </div> <!-- Botón categoría Floreros -->
+      </div> <!-- row primera fila categorías -->
+
+      <!-- Segunda fila de botones categorías-->
+      <div class="row text-center g-4">
+        <div class="col-lg-6 d-flex align-items-stretch"> <!-- Botón categoría Utilitarios -->
+          <section class="py-3 text-center container d-flex flex-column justify-content-between">
+            <div class="row py-lg-3">
+              <div class="col-lg-8 col-md-8 mx-auto py-4">
+                <p>
+                  <img src="{% static 'assets/categoria_ Utilitario.png' %}" alt="Categoria Utilitarios"
+                    class="border border-1 rounded-4 mb-2 img-categorias">
+                </p>
+                <p>
+                  <a href="./src/pages/tienda.html">
+                    <button class="button--change title--font5">Utilitarios</button></a>
+                </p>
+              </div>
+            </div>
+          </section>
+        </div> <!-- Botón categoría Utilitarios -->
+
+        <div class="col-lg-6 d-flex align-items-stretch"> <!-- Botón categoría Velas -->
+          <section class="py-3 text-center container d-flex flex-column justify-content-between">
+            <div class="row py-lg-3">
+              <div class="col-lg-8 col-md-8 mx-auto py-4">
+                <p>
+                  <img src="{% static 'assets/categoria_Velas.png' %}" alt="Categoria Velas"
+                    class="border border-1 rounded-4 mb-2 img-categorias">
+                </p>
+                <p>
+                  <a href="./src/pages/tienda.html">
+                    <button class="button--change title--font5">Velas</button></a>
+                </p>
+              </div>
+            </div>
+          </section>
+        </div> <!-- Botón categoría Velas -->
+      </div> <!-- row segunda fila categorías -->
+
+    </div> <!-- Container sección categorías -->
+
+  </main>
+
     <!-- Aquí va el contenido específico de la página de inicio -->
 {% endblock %}

@@ -1,8 +1,9 @@
+
 {% load static %}
 
 <div class="input-group">
     <div class="custom-file">
-        <input type="file" name="{{ widget.name }}"{% include "django/forms/widgets/attrs.html" %} class="custom-file-input" id="{{ widget.id_for_label }}">
+        <input type="file" name="{{ widget.name }}"{% include "django/forms/widgets/attrs.html" %} multiple>
         <label class="custom-file-label" for="{{ widget.id_for_label }}">{{ widget.initial_text }}</label>
     </div>
     {% if not widget.is_required %}
@@ -11,12 +12,3 @@
         </div>
     {% endif %}
 </div>
-
-<script>
-    function clearFileInput(idForLabel) {
-        var label = document.querySelector('label[for="' + idForLabel + '"]');
-        var input = label.nextElementSibling;
-        input.value = null;
-        label.innerHTML = '{{ widget.initial_text }}';
-    }
-</script>
