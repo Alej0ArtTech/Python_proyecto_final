@@ -11,25 +11,25 @@ Trabajaré con la finalidad de completar este trabajo final en esta fecha
 
 🕵️ Cumplimiento de consigna:
 
-💫 Entrega hecha por GitHub
+💫 Entrega hecha por GitHub Lista!
 
-💫 Readme con la explicación del proyecto
+💫 Readme con la explicación del proyecto Lista! (continuar mejorando)
 
-💫 Video de no más de 10 minutos
+💫 Video de no más de 10 minutos (PENDIENTE!)
 
 🕵️ Estructura interna:
 
-💫 una o más aplicaciones creadas
+💫 una o más aplicaciones creadas (COMPLETADO!)
 
-💫 dos modelos con campos de texto, número, fecha
+💫 dos modelos con campos de texto, número, fecha (COMPLETADO!)
 
-💫 vista de listado de registros de un modelo
+💫 vista de listado de registros de un modelo En proceso.
 
-💫 vista del detalle de un registro de un modelo
+💫 vista del detalle de un registro de un modelo En proceso.
 
-💫 vista para crear un registro de un modelo
+💫 vista para crear un registro de un modelo En proceso.
 
-💫 vista para eliminar un registro de un modelo
+💫 vista para eliminar un registro de un modelo En 
 
 💫 about/ que hable sobre el creador del proyecto
 
