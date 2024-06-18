@@ -5,7 +5,7 @@
 <div class="container">
     <h1>Bienvenido de administracion de productos</h1>
     {% if user.is_superuser %}
-        <a href="{% url 'producto:create_product' %}" class="btn btn-primary">Crear Producto</a>
+        <a href="{% url 'productos:create_product' %}" class="btn btn-primary">Crear Producto</a>
     {% endif %}
     <!-- Aquí podrías agregar más contenido para la página de inicio -->
 </div>

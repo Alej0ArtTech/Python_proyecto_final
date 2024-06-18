@@ -1,3 +1,6 @@
 from django.contrib import admin
 
-# Register your models here.
+from categorias.models import Categoria  # Ajusta según la ubicación real de tus modelos
+
+admin.site.register(Categoria)
+

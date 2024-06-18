@@ -15,7 +15,7 @@
         <img src="{{ imagen.imagen.url }}" alt="{{ object.nombre }}" style="width: 150px; height: 150px;">
         {% endfor %}
     </div>
-    <a href="{% url 'producto:productocategoria_update' object.pk %}" class="btn btn-warning">Editar</a>
-    <a href="{% url 'producto:productocategoria_delete' object.pk %}" class="btn btn-danger">Borrar</a>
+    <a href="{% url 'productos:productocategoria_update' object.pk %}" class="btn btn-warning">Editar</a>
+    <a href="{% url 'productos:productocategoria_delete' object.pk %}" class="btn btn-danger">Borrar</a>
 </div>
 {% endblock %}

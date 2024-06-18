@@ -18,6 +18,7 @@ urlpatterns = [
     path('logged_out/', views.logged_out, name='logged_out'),
     path('productos/', include('productos.urls')),
 
+
 ]
 
 if settings.DEBUG:

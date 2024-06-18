@@ -32,6 +32,11 @@
                     <a class="nav-link active" id='navbrcolorletras' aria-current="page"
                         href="./src/pages/contacto.html">Contacto</a>
                 </li>
+                {% if user.is_superuser %}
+                    <li class="nav-item">
+                        <a class="nav-link{% if request.path == '/administrar_productos/' %} active{% endif %}" href="{% url 'productos:productocategoria_list' %}">Administrar Productos</a>
+                    </li>
+                {% endif %}
             </ul>
             <!-- Formulario de búsqueda -->
             <form class="d-flex" role="buscar">
